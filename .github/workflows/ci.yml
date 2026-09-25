@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+      - name: Build, test, and package development MSIX
+        shell: pwsh
+        run: ./scripts/build.ps1
+      - name: Extension smoke test
+        shell: pwsh
+        run: ./scripts/smoke.ps1

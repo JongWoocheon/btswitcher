@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/BtSwitcher.Cli/BtSwitcher.Cli.csproj" />
+    <Project Path="src/BtSwitcher.Core/BtSwitcher.Core.csproj" />
+    <Project Path="src/BtSwitcher.Extension/BtSwitcher.Extension.csproj" />
+    <Project Path="src/BtSwitcher.Windows/BtSwitcher.Windows.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BtSwitcher.Tests/BtSwitcher.Tests.csproj" />
+  </Folder>
+</Solution>

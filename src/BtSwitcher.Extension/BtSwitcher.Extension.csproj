@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>BtSwitcherExtension</AssemblyName>
+    <RootNamespace>BtSwitcher.Extension</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
+    <WindowsSdkPackageVersion>10.0.26100.57</WindowsSdkPackageVersion>
+    <CsWinRTWindowsMetadata>&quot;$(NuGetPackageRoot)microsoft.windows.sdk.net.ref\$(WindowsSdkPackageVersion)\winmd&quot;</CsWinRTWindowsMetadata>
+    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
+    <Platforms>x64;ARM64</Platforms>
+    <PlatformTarget>$(Platform)</PlatformTarget>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <EnableMsixTooling>true</EnableMsixTooling>
+    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+    <!-- CmdPal's winmd defines interfaces, not activatable runtime classes.
+         Our out-of-process COM class is explicitly registered in the manifest. -->
+    <AppxHarvestWinmdRegistration>false</AppxHarvestWinmdRegistration>
+    <PublishTrimmed>false</PublishTrimmed>
+    <PublishSingleFile>false</PublishSingleFile>
+    <CsWinRTAotOptimizerEnabled>true</CsWinRTAotOptimizerEnabled>
+    <CsWinRTAotWarningLevel>2</CsWinRTAotWarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Assets\*.png" />
+    <Content Include="Assets\*.svg" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Manifest Include="$(ApplicationManifest)" />
+    <ProjectCapability Include="Msix" />
+    <ProjectReference Include="../BtSwitcher.Windows/BtSwitcher.Windows.csproj" />
+    <PackageReference Include="Microsoft.CommandPalette.Extensions" Version="0.12.260812002" />
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
+    <PackageReference Include="Shmuelie.WinRTServer" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools.MSIX" Version="1.7.20250829.1" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4948" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

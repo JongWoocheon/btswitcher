@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "BtSwitcher (Package)": {
+      "commandName": "MsixPackage",
+      "doNotLaunchApp": true
+    },
+    "BtSwitcher (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

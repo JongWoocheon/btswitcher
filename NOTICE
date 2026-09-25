@@ -1,0 +1,10 @@
+btswitcher
+
+The COM server entry point, extension lifetime class, packaging manifests,
+and publish profiles are adapted from the Microsoft PowerToys Command Palette
+extension template. Names, identity and lifetime cleanup have been changed for
+this project. The audio switch icon and generated package assets are original.
+Copyright (c) Microsoft Corporation. MIT license: licenses/PowerToys-MIT.txt.
+Other original project code is licensed under the root Apache-2.0 LICENSE.
+Bluetooth is a registered trademark of Bluetooth SIG, Inc. This project is not
+affiliated with or endorsed by Bluetooth SIG.
