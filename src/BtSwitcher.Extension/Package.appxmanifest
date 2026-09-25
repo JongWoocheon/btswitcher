@@ -11,7 +11,7 @@
   <Identity
     Name="BtSwitcherExtension"
     Publisher="CN=BtSwitcher"
-    Version="0.0.1.5" />
+    Version="0.1.0.0" />
   <!-- The release script replaces Publisher and Version in the generated manifest
        with the signing certificate subject and requested release version. -->
 
