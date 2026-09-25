@@ -14,6 +14,6 @@ public sealed partial class BtSwitcherExtensionCommandsProvider : CommandProvide
         Icon = ExtensionIcons.AudioSwitch;
     }
     public override ICommandItem[] TopLevelCommands() =>
-    [new CommandItem(page) { Title = "Bluetooth Switcher" }];
+    [new CommandItem(page) { Title = "Bluetooth Switcher", Icon = ExtensionIcons.AudioSwitch }];
     public override void Dispose() => page.Dispose();
 }

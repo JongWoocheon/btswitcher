@@ -33,6 +33,13 @@ internal static class DiagnosticSmoke
                 var provider = (ICommandProvider)projected.GetProvider(ProviderType.Commands);
                 var top = provider.TopLevelCommands();
                 if (top.Length != 1 || top[0].Title != "Bluetooth Switcher") throw new InvalidOperationException("Missing Bluetooth devices entry.");
+                var lightIcon = provider.Icon.Light.Icon;
+                var darkIcon = provider.Icon.Dark.Icon;
+                if (lightIcon is null || darkIcon is null || !File.Exists(lightIcon) || !File.Exists(darkIcon)
+                    || !lightIcon.EndsWith("_altform-lightunplated.png", StringComparison.Ordinal)
+                    || !darkIcon.EndsWith("_altform-unplated.png", StringComparison.Ordinal)
+                    || top[0].Icon.Light.Icon != lightIcon || top[0].Icon.Dark.Icon != darkIcon)
+                    throw new InvalidOperationException("Missing or mismatched light/dark command icons.");
                 var page = (IListPage)top[0].Command;
                 if (top[0].Command.Name != "Bluetooth Switcher" || page.PlaceholderText != "Search paired Bluetooth audio devices..."
                     || page.EmptyContent.Title != "No matching Bluetooth audio devices" || page.EmptyContent.Command.Name != "Open")
