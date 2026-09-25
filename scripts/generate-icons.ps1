@@ -61,5 +61,4 @@ foreach ($scale in 100,125,150,200,400) {
 Write-Logo 'StoreLogo.png' 50 50 50 $onDarkBackground
 Write-Logo 'Wide310x150Logo.scale-200.png' 620 300 200 $onDarkBackground
 Write-Logo 'SplashScreen.scale-200.png' 1240 600 200 $onDarkBackground
-Write-Logo 'LockScreenLogo.scale-200.png' 48 48 48 $onDarkBackground
 Write-Host 'Generated Windows package icons from the audio switch SVG assets.'
